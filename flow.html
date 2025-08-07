@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>User Quiz Flowchart</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 30px;
+    background-color: #fff;
+    color: #222;
+    text-align: center;
+  }
+  .flowchart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+  .start, .process, .alert, .decision {
+    padding: 14px 20px;
+    min-width: 250px;
+    max-width: 300px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    border-radius: 30px;
+    background-color: #d0e6f9;
+    position: relative;
+    font-size: 1.1rem;
+  }
+  .process, .alert {
+    border-radius: 8px;
+  }
+  .alert {
+    background-color: #f9e3a6;
+    border: 1.5px solid #d1b54b;
+  }
+  .decision {
+    width: 280px;
+    height: 80px;
+    background-color: #fbbd69;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.15rem;
+    color: #5a3b00;
+  }
+  .arrows {
+    display: flex;
+    justify-content: space-between;
+    width: 320px;
+    margin-bottom: -30px;
+  }
+  .arrow-label {
+    font-size: 0.9rem;
+    font-weight: bold;
+  }
+  .arrow-line {
+    border-top: 2px solid #444;
+    width: 100px;
+    margin: 0 5px;
+    position: relative;
+  }
+  .arrow-line:after {
+    content: "";
+    position: absolute;
+    top: -6px;
+    right: 0;
+    border: 8px solid transparent;
+    border-left-color: #444;
+  }
+  /* Connectors below boxes */
+  .connector {
+    width: 4px;
+    height: 30px;
+    background-color: #444;
+    margin: 0 auto 15px;
+    border-radius: 2px;
+  }
+  /* Different color for Yes and No */
+  .yes-label {
+    color: green;
+  }
+  .no-label {
+    color: brown;
+  }
+  /* Layout for the quiz take and below */
+  .horizontal-row {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+  .horizontal-row > div {
+    flex: 1 1 280px;
+  }
+</style>
+</head>
+<body>
+
+<h1>User Quiz Flowchart</h1>
+
+<div class="flowchart">
+
+  <div class="start">Start</div>
+  <div class="connector"></div>
+
+  <div class="process">
+    User enters name,<br />
+    interest, skill level
+  </div>
+  <div class="connector"></div>
+
+  <div class="decision" aria-label="Is name entered?">
+    Is name entered?
+  </div>
+  <div class="arrows" style="width: 320px; margin-bottom: 0;">
+    <div class="arrow-line" style="width: 80px; border-top-color: brown;"></div>
+    <div class="arrow-line" style="width: 80px; border-top-color: green;"></div>
+  </div>
+  <div class="arrows" style="width: 320px; margin-top: -30px; margin-bottom: 25px;">
+    <div class="arrow-label no-label" style="text-align: left; width: 160px;">No</div>
+    <div class="arrow-label yes-label" style="text-align: right; width: 160px;">Yes</div>
+  </div>
+
+  <div class="horizontal-row" style="max-width: 700px;">
+    <div class="alert">Show alert</div>
+    <div class="process" style="background-color: #c3e6ca;">
+      Show lesson<br />
+      section with greeting
+    </div>
+  </div>
+
+  <div class="horizontal-row" style="max-width: 700px; margin-top: 0;">
+    <div></div>
+    <div class="connector" style="height: 40px; background-color: #444; margin-top: 12px;"></div>
+    <div></div>
+  </div>
+
+  <div class="horizontal-row" style="max-width: 700px;">
+    <div></div>
+    <div class="process" style="background-color: #f4a261; font-weight: bold;">
+      User clicks<br />
+      “Take Quiz”
+    </div>
+    <div></div>
+  </div>
+
+  <div class="connector"></div>
+
+  <div class="process" style="background-color: #bfdbf7; font-weight: normal;">
+    Show quiz section<br />
+    with first question
+  </div>
+  <div class="connector"></div>
+
+  <div class="process" style="background-color: #f9e3a6;">
+    User enters answer<br />
+    and submits
+  </div>
+</div>
+
+</body>
+</html>
